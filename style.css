@@ -1,0 +1,340 @@
+.custom-upload-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    width: 100%;
+    height: 450px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.custom-upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.custom-upload-icon {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.custom-preview-container {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+.custom-preview-image {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.remove-button svg {
+    width: 24px;
+    height: 24px;
+    fill: red;
+}
+
+.custom-browse-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.custom-browse-button:hover {
+    background-color: #0056b3;
+}
+
+input[type="file"] {
+    display: none;
+}
+.quality-container {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 1rem;
+    border: solid 1px #ccf;
+    border-radius: 10px;
+}
+.custom-quality-container,
+.custom-size-container {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.custom-quality-container span,
+.custom-size-container label,
+.custom-size-container span {
+    margin-right: 3px;
+}
+
+#custom-qualityRange {
+    width: calc(100% - 60px);
+}
+#custom-sizeRange {
+    width: calc(100% - 60px);
+}
+.custom-quality-description,
+.custom-size-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.custom-button-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.custom-compress-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.custom-compress-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.custom-compress-button:hover:enabled {
+    background-color: #0056b3;
+}
+
+.custom-download-button {
+    background-color: #d9d9d9; /* Light gray color */
+    color: black; /* Link text color is black */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.spinner-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #007bff;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.toggle-switch-quality {
+    position: relative;
+    width: 40px; /* Smaller width */
+    height: 20px; /* Smaller height */
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.toggle-switch-quality input {
+    display: none;
+}
+
+.slider-quality {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: -5px;
+    right: -1px;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px; /* Smaller border radius */
+}
+
+.slider-quality:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 1px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider-quality {
+    background-color: #007bff;
+}
+
+input:checked + .slider-quality:before {
+    transform: translateX(20px); /* Adjusted for smaller size */
+}
+
+.toggle-switch-size {
+    position: relative;
+    width: 40px; /* Smaller width */
+    height: 20px; /* Smaller height */
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.toggle-switch-size input {
+    display: none;
+}
+
+.slider-size {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: -5px;
+    right: 0px;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px; /* Smaller border radius */
+}
+
+.slider-size:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 1px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider-size {
+    background-color: #007bff;
+}
+
+input:checked + .slider-size:before {
+    transform: translateX(20px); /* Adjusted for smaller size */
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .toggle-switch-quality {
+        position: relative;
+        width: 40px; /* Smaller width */
+        height: 20px; /* Smaller height */
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .slider-quality {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: -8px;
+        right: -3px;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 20px; /* Smaller border radius */
+    }
+    .slider-quality:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 15px;
+        left: 1px;
+        bottom: 2px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+    .toggle-switch-size {
+        position: relative;
+        width: 40px; /* Smaller width */
+        height: 20px; /* Smaller height */
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .slider-size {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: -8px;
+        right: 0px;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 20px; /* Smaller border radius */
+    }
+    .slider-size:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 15px;
+        left: 1px;
+        bottom: 2px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,39 @@
+<div class="custom-button-container">
+    <button class="custom-compress-button" id="custom-compressButton" disabled>Compress WebP</button>
+    <a id="custom-downloadButton" class="custom-download-button" style="display: none;">Download WebP</a>
+</div>
+<div class="custom-upload-container">
+    <div class="custom-preview-container" id="custom-previewContainer"></div>
+    <div class="custom-upload-area" id="custom-uploadfile">
+        <img src="https://prepphint.com/wp-content/uploads/2024/06/upload-icon.webp" alt="Upload Icon" class="custom-upload-icon" id="custom-uploadIcon">
+        <p id="upload-text">Drag & Drop to upload Files or</p>
+        <button class="custom-browse-button">Browse Files</button>
+        <input type="file" id="custom-webpInput" accept="image/webp" multiple hidden>
+    </div>
+    <div class="spinner-overlay" id="spinner-overlay">
+        <div class="spinner" id="spinner"></div>
+    </div>
+    <div class="error-message" id="error-message" style="display: none;">Please upload WebP images.</div>
+    <div class="error-message" id="size-error-message" style="display: none;">File size cannot be increased beyond the original size.</div>
+</div>
+<div class="quality-container">
+    <div class="custom-quality-description" id="custom-qualityDescription">Significant reduction in file size, visible loss of quality.</div>
+    <div class="custom-quality-container">
+        <label class="toggle-switch-quality">
+            <input type="checkbox" id="quality-checkbox" disabled>
+            <span class="slider-quality"></span>
+        </label>
+        <label for="custom-qualityRange">Quality:</label>
+        <span id="custom-qualityValue">1</span>%
+        <input type="range" id="custom-qualityRange" min="1" max="100" value="1" disabled>
+    </div>
+    <div class="custom-size-container">
+        <label class="toggle-switch-size">
+            <input type="checkbox" id="size-checkbox" disabled>
+            <span class="slider-size"></span>
+        </label>
+        <label for="custom-sizeRange">Size:</label>
+        <span id="custom-sizeValue">1</span>KB
+        <input type="range" id="custom-sizeRange" min="1" max="1024" value="1" disabled>
+    </div>
+</div>
